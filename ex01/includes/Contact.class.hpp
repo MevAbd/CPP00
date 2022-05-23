@@ -6,12 +6,12 @@
 /*   By: malbrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 14:24:05 by malbrand          #+#    #+#             */
-/*   Updated: 2022/05/17 14:26:55 by malbrand         ###   ########.fr       */
+/*   Updated: 2022/05/23 14:35:40 by malbrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT.CLASS_HPP
-# define CONTACT.CLASS_HPP
+#ifndef CONTACT_CLASS_HPP
+# define CONTACT_CLASS_HPP
 
 class Contact
 {
@@ -20,6 +20,12 @@ class Contact
 		~Contact	(void);
 
 	private:
+		int			_index;
+		std::string	_FirstName;
+		std::string	_LastName;
+		std::string	_NickName;
+		std::string	_PhoneNumber;
+		std::string	_DarkestSecret;
 };
 
 #endif
