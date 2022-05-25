@@ -1,4 +1,6 @@
-SRC =	main.cpp 
+SRC =	main.cpp \
+		Contact.cpp \
+		PhoneBook.cpp
 
 OBJ = $(patsubst %.cpp,$(OBJ_DIR)%.o,${SRC})
 SRC_DIR	= src/

@@ -6,7 +6,7 @@
 /*   By: malbrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:28:22 by malbrand          #+#    #+#             */
-/*   Updated: 2022/05/23 14:57:05 by malbrand         ###   ########.fr       */
+/*   Updated: 2022/05/25 13:50:40 by malbrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ int main(void)
 	{
 		if (data == "ADD")
 			phonebook.AddContact();
-		else if (data == "SEARCH")
-			phonebook.SearchContact();
+//		else if (data == "SEARCH")
+//			phonebook.SearchContact();
 		else if (data == "EXIT")
 		{
 			std::cout << "You quit the program. See You Soon." << std::endl;

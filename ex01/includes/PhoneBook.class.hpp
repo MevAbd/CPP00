@@ -6,7 +6,7 @@
 /*   By: malbrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 14:22:15 by malbrand          #+#    #+#             */
-/*   Updated: 2022/05/23 14:30:55 by malbrand         ###   ########.fr       */
+/*   Updated: 2022/05/24 12:18:37 by malbrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ class PhoneBook
 	public:
 		PhoneBook	(void);
 		~PhoneBook	(void);
+		void		AddContact(void);
+		void		SearchContact(void) const;
 
 	private:
-		int			_Index;
+		int			_NbContact;
 		Contact		_contact[8];
 };
 

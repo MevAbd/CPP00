@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.hpp                                  :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malbrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/17 14:24:05 by malbrand          #+#    #+#             */
-/*   Updated: 2022/05/25 11:12:49 by malbrand         ###   ########.fr       */
+/*   Created: 2022/05/24 11:47:37 by malbrand          #+#    #+#             */
+/*   Updated: 2022/05/25 13:48:36 by malbrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_CLASS_HPP
-# define CONTACT_CLASS_HPP
+#include "PhoneBook.class.hpp"
 
-class Contact
+PhoneBook::PhoneBook(void)
 {
-	public:
-		Contact		(void);
-		~Contact	(void);
-		void		FillContact(int Index);
+	_NbContact = 0;
+	return ;
+}
 
+PhoneBook::~PhoneBook(void)
+{
+	return ;
+}
 
-	private:
-		int			_Index;
-		std::string	_FirstName;
-		std::string	_LastName;
-		std::string	_NickName;
-		std::string	_PhoneNumber;
-		std::string	_DarkestSecret;
-};
-
-#endif
+void	PhoneBook::AddContact(void)
+{
+	if	(_NbContact == 7)
+	{
+		for (int i = 0; i < 7; i++)
+		{
+			_contact[i] = _contact[i + 1];
+		}
+	}
+	else
+	{
+		_contact[_NbContact].FillContact(_NbContact); 
+		_NbContact++;
+	}
+}
