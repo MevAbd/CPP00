@@ -6,7 +6,7 @@
 /*   By: malbrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 14:24:05 by malbrand          #+#    #+#             */
-/*   Updated: 2022/05/25 11:12:49 by malbrand         ###   ########.fr       */
+/*   Updated: 2022/05/27 11:28:53 by malbrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class Contact
 		std::string	_NickName;
 		std::string	_PhoneNumber;
 		std::string	_DarkestSecret;
+		std::string	Check_Alpha(std::string)const;
+		std::string	Check_Num(std::string)const;
 };
 
 #endif
