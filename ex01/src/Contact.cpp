@@ -6,7 +6,7 @@
 /*   By: malbrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 11:13:32 by malbrand          #+#    #+#             */
-/*   Updated: 2022/05/27 11:35:06 by malbrand         ###   ########.fr       */
+/*   Updated: 2022/05/27 15:22:28 by malbrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Contact::~Contact(void)
 	return ;
 }
 
-std::string		Contact::Check_Alpha(std::string say)const
+std::string		Check_Alpha(std::string say)
 {
 	std::string	str;
 
@@ -41,7 +41,7 @@ std::string		Contact::Check_Alpha(std::string say)const
 	return (str);
 }
 
-std::string	Contact::Check_Num(std::string say)const
+std::string	Check_Num(std::string say)
 {
 	std::string	str;
 
@@ -60,9 +60,8 @@ std::string	Contact::Check_Num(std::string say)const
 	return (str);
 }
 
-void	Contact::FillContact(int index)
+void	Contact::FillContact(void)
 {
-	_Index = index;
 	std::cout << "We need some information :" << std::endl;
 	_FirstName = Check_Alpha("First Name     : ");
 	_LastName = Check_Alpha("Last Name      : ");
@@ -70,5 +69,51 @@ void	Contact::FillContact(int index)
 	_PhoneNumber = Check_Num("Phone Number   : ");
 	std::cout << "Darkest Secret :" << std::endl;
 	std::getline(std::cin, _DarkestSecret);
+	int size = _DarkestSecret.size();
+	while (size == 0)
+	{
+		std::cout << "Darkest Secret :" << std::endl;
+		std::getline(std::cin, _DarkestSecret);
+		size = _DarkestSecret.size();
+	}
 	std::cout << _FirstName << " is added to your contacts." << std::endl;
+}
+
+void	PrintTen(std::string str)
+{
+	int			size = str.size();
+	std::string	space(10, ' ');
+
+	if (size <= 10)
+		std::cout << space.substr(0, 10 - size) << str;
+	else
+		std::cout << str.substr(0, 9) << '.'; 
+}
+
+void	Contact::DisplayContact(int i)const
+{
+	std::string	index = "";
+
+	index = i + '0';
+	PrintTen(index);
+	std::cout << "|";
+	PrintTen(_FirstName);
+	std::cout << "|";
+	PrintTen(_LastName);
+	std::cout << "|";
+	PrintTen(_NickName);
+	std::cout << std::endl;
+}
+
+void	Contact::DisplayAll(void)const
+{
+	PrintTen(_FirstName);
+	std::cout << "|";
+	PrintTen(_LastName);
+	std::cout << "|";
+	PrintTen(_NickName);
+	std::cout << "|";
+	PrintTen(_PhoneNumber);
+	std::cout << "|";
+	PrintTen(_DarkestSecret);
 }
