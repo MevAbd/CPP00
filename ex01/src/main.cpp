@@ -6,7 +6,7 @@
 /*   By: malbrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:28:22 by malbrand          #+#    #+#             */
-/*   Updated: 2022/05/27 15:33:42 by malbrand         ###   ########.fr       */
+/*   Updated: 2022/06/05 13:06:45 by malbrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int main(void)
 	std::cout << std::endl;
 	while (getline(std::cin, data))
 	{
-		std::cout << "How can i help you ?" << std::endl;
 		if (data == "ADD")
 			phonebook.AddContact();
 		else if (data == "SEARCH")
